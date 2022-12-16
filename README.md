@@ -93,3 +93,9 @@ rosrun ardrone_autonomy ardrone_driver _realtime_navdata:=False _navdata_demo:=0
 - Increase alpha parameter (only for vertical/horizontal waypoint flight): Button 11
 - Decrease alpha parameter (only for vertical/horizontal waypoint flight): Button 12
 
+## Run with Docker and nvidia-docker
+
+```
+xhost +
+docker run -it --volume /tmp/.X11-unix:/tmp/.X11-unix:rw  --env "DISPLAY" --gpus all stability_scale
+```
