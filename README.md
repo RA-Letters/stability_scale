@@ -97,5 +97,7 @@ rosrun ardrone_autonomy ardrone_driver _realtime_navdata:=False _navdata_demo:=0
 
 ```
 xhost +
-docker run -it --volume /tmp/.X11-unix:/tmp/.X11-unix:rw  --env "DISPLAY" --gpus all stability_scale
+docker run -it --volume /tmp/.X11-unix:/tmp/.X11-unix:rw  \
+  --env "DISPLAY" --gpus all \
+  ghcr.io/ra-letters/stability_scale:master
 ```
