@@ -1,7 +1,7 @@
-FROM osrf/ros:indigo-desktop-full
+FROM lindwaltz/ros-indigo-desktop-full-nvidia
 
 RUN apt-get update \
- && apt-get install -y \
+ && apt-get install -y --force-yes \
      ros-indigo-ardrone-autonomy \
  && rm -rf /var/lib/apt/lists/*
 
@@ -24,4 +24,4 @@ RUN sed --in-place --expression \
       '$isource "/catkin_ws/devel/setup.bash"' \
       /ros_entrypoint.sh
 
-CMD ["bash"]
+CMD ["roslaunch", "cvg_sim_gazebo", "brick_wall.launch"]
